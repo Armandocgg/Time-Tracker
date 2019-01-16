@@ -13,28 +13,24 @@ function Timer ({ title, description }) {
         <Text style={[ styles.textBig, styles.textBold ]}>0:00:00</Text>
       </View>
       <View style={ styles.buttonAction }>
-        <View style={[ styles.col, styles.pRight ]}>
+        <View style={[ styles.flex, styles.pRight ]}>
           <Button 
             text="Edit"
             containerStyle={ styles.colorAction }
-            textStyles={[ styles.colorAction, styles.textBold  ]}/>
+            textStyles={[ styles.colorAction, styles.textBold ]}/>
         </View>
-        <View style={[ styles.col, styles.pLeft ]}>
+        <View style={[ styles.flex, styles.pLeft ]}>
           <Button 
             text="Remove"
             containerStyle={ styles.colorAction } 
-            textStyles={[ styles.colorAction, styles.textBold  ]}/>
+            textStyles={[ styles.colorAction, styles.textBold ]}/>
         </View>
       </View>
       <View>
         <Button 
           text="Start" 
           containerStyle={ styles.colorStart } 
-          textStyles={[ styles.colorStart, styles.textBold  ]}/>
-        {/* <Button 
-          text="Start" 
-          containerStyle={ styles.colorStop } 
-          textStyles={[ styles.colorStart, styles.textBold  ]}/> */}
+          textStyles={[ styles.colorStart, styles.textBold ]}/>
       </View>
     </View>
   )
@@ -49,7 +45,7 @@ const styles = StyleSheet.create({
     padding: paddingVariable,
   },
   clock: {
-    paddingVertical: paddingVariable,
+    paddingVertical: paddingVariable/2,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -59,7 +55,7 @@ const styles = StyleSheet.create({
   textBig: {
     fontSize: 40,
   },
-  col: {
+  flex: {
     flex: 1,
   },
   buttonAction:{

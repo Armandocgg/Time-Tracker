@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     backgroundColor: 'transparent',
-    paddingHorizontal: 15,
-    paddingVertical: 25
+    paddingHorizontal: 18,
+    paddingVertical: 18
   },
   buttonTextStyles: {
     fontSize: 16,
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   timerContainer: {
     backgroundColor: 'transparent',
-    paddingHorizontal: 15,
-    paddingBottom: 15, 
+    paddingHorizontal: 18,
+    paddingBottom: 18, 
   }
 });
