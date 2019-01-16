@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from '@/components/Header'
 import Button from '@/components/Button'
+import Timer from '@/components/Timer'
 import { MaterialIcons } from '@expo/vector-icons'
 
 export default class App extends React.Component {
@@ -15,6 +16,9 @@ export default class App extends React.Component {
             containerStyles={ styles.buttonContainerStyles }>
             <MaterialIcons name="add" size={25} color="#4a4a4a"/>
           </Button>
+        </View>
+        <View style={ styles.timerContainer }>
+          <Timer title="Title" description="Description"/>
         </View>
       </View>
     )
@@ -39,5 +43,10 @@ const styles = StyleSheet.create({
   buttonContainerStyles: {
     backgroundColor: 'white',
     borderColor: '#4a4a4a'
+  },
+  timerContainer: {
+    backgroundColor: 'transparent',
+    paddingHorizontal: 15,
+    paddingBottom: 15, 
   }
 });

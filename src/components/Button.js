@@ -39,14 +39,12 @@ Button.propTypes = {
   ]),
   text: PropTypes.string,
   disebled: PropTypes.bool
-
 }
 
 const styles = StyleSheet.create({
   container: {
     height: 44,
     width: '100%',
-    marginTop: 30,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
