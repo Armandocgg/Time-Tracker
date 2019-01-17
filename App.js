@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Header from '@/components/Header'
 import Button from '@/components/Button'
 import Timer from '@/components/Timer'
+import TimerForm from '@/components/TimerForm'
 import { MaterialIcons } from '@expo/vector-icons'
 
 export default class App extends React.Component {
@@ -18,6 +19,7 @@ export default class App extends React.Component {
           </Button>
         </View>
         <View style={ styles.timerContainer }>
+          <TimerForm/>
           <Timer title="Title" description="Description"/>
         </View>
       </View>
