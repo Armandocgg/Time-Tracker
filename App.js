@@ -1,27 +1,41 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, ScrollView, View } from 'react-native';
 import Header from '@/components/Header'
-import Button from '@/components/Button'
-import Timer from '@/components/Timer'
-import TimerForm from '@/components/TimerForm'
-import { MaterialIcons } from '@expo/vector-icons'
+import ToggleableTimerForm from '@/containers/ToggleableTimerForm'
+import EditableTimer from '@/containers/EditableTimer'
 
 export default class App extends React.Component {
   render() {
     return (
-      <View>
-        <Header title="TIME"></Header>
-        <View style={styles.buttonContainer}>
-          <Button
-            textStyles={ styles.buttonTextStyles }
-            containerStyles={ styles.buttonContainerStyles }>
-            <MaterialIcons name="add" size={25} color="#4a4a4a"/>
-          </Button>
-        </View>
-        <View style={ styles.timerContainer }>
-          <TimerForm/>
-          <Timer title="Title" description="Description"/>
-        </View>
+      <View style={styles.container}>
+        <Header title="Time Tracker"></Header>
+        <ToggleableTimerForm 
+          onFormSubmit={() => null} //this.handleCreateFormSubmit
+        />
+        <ScrollView style={styles.container}>
+          <EditableTimer
+            id="1"
+            title="Create timer app"
+            project="Bootcamp"
+            elapsed="8986300"
+            isRunning 
+            onFormSubmit={ () => null } //this.handleFormSubmit
+            onRemovePress={() => null } //this.handleRemovePress
+            onStartPress={() => null } //this.toggleTimer
+            onStopPress={() => null } //this.toggleTimer
+          />
+          <EditableTimer
+            id="2"
+            title="Mow the lawn"
+            project="House Chores"
+            elapsed="8986300"
+            isRunning={false}
+            onFormSubmit={ () => null } //this.handleFormSubmit
+            onRemovePress={() => null } //this.handleRemovePress
+            onStartPress={() => null } //this.toggleTimer
+            onStopPress={() => null } //this.toggleTimer
+          />    
+        </ScrollView>
       </View>
     )
   }
@@ -31,24 +45,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff'
-  },
-  buttonContainer: {
-    backgroundColor: 'transparent',
-    paddingHorizontal: 18,
-    paddingVertical: 18
-  },
-  buttonTextStyles: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#4a4a4a'
-  },
-  buttonContainerStyles: {
-    backgroundColor: 'white',
-    borderColor: '#4a4a4a'
-  },
-  timerContainer: {
-    backgroundColor: 'transparent',
-    paddingHorizontal: 18,
-    paddingBottom: 18, 
   }
 });

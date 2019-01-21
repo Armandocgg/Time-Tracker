@@ -9,16 +9,16 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 
-function Button ({ containerStyle, textStyles, children, disebled, text }){
+function Button ({ containerStyle, textStyles, children, disebled, text, onPress }){
   return(
     Platform.select({
       ios: (
-        <TouchableOpacity disabled={ disebled } style={ [styles.container, containerStyle] }>
+        <TouchableOpacity onPress={ onPress } disabled={ disebled } style={ [styles.container, containerStyle] }>
           { text ? <Text style={ textStyles }>{ text }</Text> : children }
         </TouchableOpacity>
       ),
       android: (
-        <TouchableNativeFeedback disabled={ disebled }>
+        <TouchableNativeFeedback onPress={ onPress } disabled={ disebled }>
           <View style={ [styles.container, containerStyle] }> 
             { text ? <Text style={ textStyles }>{ text }</Text> : children }
           </View>
@@ -38,7 +38,8 @@ Button.propTypes = {
     PropTypes.object
   ]),
   text: PropTypes.string,
-  disebled: PropTypes.bool
+  disebled: PropTypes.bool,
+  onPress: PropTypes.func
 }
 
 const styles = StyleSheet.create({
