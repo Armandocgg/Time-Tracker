@@ -51,7 +51,6 @@ export default class App extends React.Component {
         isRunning: false
       };
       this.setState({ timers: [...this.state.timers, timer] })
-      }))
     }
     onFormClose()
   }
