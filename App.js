@@ -50,7 +50,7 @@ export default class App extends React.Component {
         elapsed: '3624300',
         isRunning: false
       };
-      this.setState({ timers: [...this.state.timers, timer] })
+      this.setState({ timers: [newTimers, ...this.state.timers] })
     }
     onFormClose()
   }
