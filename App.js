@@ -40,7 +40,8 @@ export default class App extends React.Component {
     ]
   }
 
-  _handleCreateFormSubmit = (title, project, onFormClose ) => {
+  _handleCreateFormSubmit = (title, project, onFormClose) => {
+    // console.log(params)
     if ( title !== "" ) {
       const newTimers = {
         id: v4(),
@@ -49,8 +50,7 @@ export default class App extends React.Component {
         elapsed: '3624300',
         isRunning: false
       };
-      this.setState(prevState => ({
-        timers: [newTimers, ...prevState.timers]
+      this.setState({ timers: [...this.state.timers, timer] })
       }))
     }
     onFormClose()
@@ -73,7 +73,7 @@ export default class App extends React.Component {
               project={ project }
               elapsed={ elapsed }
               isRunning={ isRunning }
-              onFormSubmit={ () => null } //this.handleFormSubmit
+              onFormSubmit={ this._handleCreateFormSubmit} //this.handleFormSubmit
               onRemovePress={ () => null } //this.handleRemovePress
               onStartPress={ () => null } //this.toggleTimer
               onStopPress={ () => null } //this.toggleTimer

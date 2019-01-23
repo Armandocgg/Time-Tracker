@@ -18,7 +18,8 @@ class EditableTimer extends Component {
       title, 
       project, 
       elapsed, 
-      isRunning, 
+      isRunning,
+      onFormSubmit,
       onRemovePress, 
       onStartPress, 
       onStopPress, 
@@ -31,7 +32,7 @@ class EditableTimer extends Component {
             id={ id }
             title={ title }
             project={ project }
-            onFormSubmit={() => null}
+            onFormSubmit={ onFormSubmit }
             onFormClose={ this._toggleForm }
           />
         ) : (
