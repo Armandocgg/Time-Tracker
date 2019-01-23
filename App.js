@@ -40,13 +40,29 @@ export default class App extends React.Component {
     ]
   }
 
+  _handleCreateFormSubmit = (title, project, onFormClose ) => {
+    if ( title !== "" ) {
+      const newTimers = {
+        id: v4(),
+        title,
+        project,
+        elapsed: '3624300',
+        isRunning: false
+      };
+      this.setState(prevState => ({
+        timers: [newTimers, ...prevState.timers]
+      }))
+    }
+    onFormClose()
+  }
+
   render() {
     const { timers } = this.state
     return (
       <View style={ styles.container }>
         <Header title="Time Tracker"></Header>
         <ToggleableTimerForm 
-          onFormSubmit={ () => null} //this.handleCreateFormSubmit
+          onFormSubmit={ this._handleCreateFormSubmit } //this.handleCreateFormSubmit
         />
         <ScrollView style={ styles.container }>
           { timers.map(({ id, title, project, elapsed, isRunning }) => (

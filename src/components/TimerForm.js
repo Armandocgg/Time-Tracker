@@ -41,7 +41,7 @@ class TimerForm extends Component {
               text={ submitText }
               containerStyle={ styles.colorStart }
               textStyles={[ styles.colorStart, styles.textBold ]}
-              onPress={ onFormSubmit }
+              onPress={() => onFormSubmit( title, project, onFormClose ) }
               />
           </View>
           <View style={[ styles.flex, styles.pLeft ]}>
